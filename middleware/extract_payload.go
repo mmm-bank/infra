@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func extractPayload(next http.Handler) http.Handler {
+func ExtractPayload(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		token := r.Header.Get("Authorization")
 		parts := strings.Fields(token)
